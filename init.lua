@@ -1,5 +1,4 @@
 --[[
-
 =====================================================================
 =================== READ THIS BEFORE CONTINUING ====================
 =====================================================================
@@ -787,6 +786,8 @@ require('lazy').setup({
           --['<Tab>'] = cmp.mapping.select_next_item(),
           --['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
+          ['<Tab>'] = cmp.mapping.confirm { select = true },
+
           -- Manually trigger a completion from nvim-cmp.
           --  Generally you don't need this, because nvim-cmp will display
           --  completions whenever it has completion options available.
@@ -823,6 +824,10 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+        },
+        window = {
+          completion = { border = 'rounded' },
+          documentation = { border = 'rounded' },
         },
       }
     end,
